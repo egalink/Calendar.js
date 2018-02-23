@@ -1,0 +1,43 @@
+{
+    "name": "calendar",
+    "title": "calendar.js",
+    "description": "A simple, minimal, powerful and fully customizable event calendar plugin written in pure JavaScript. No dependences required.",
+    "author": {
+        "name": "Jakim Hernández",
+        "url": "http://egalink.github.io/"
+    },
+    "homepage": "https://egalink.github.io/calendar.js/",
+    "version": "1.0.0",
+    "main": "dist/calendar.js",
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-uglify": "^2.0.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-cssnano": "^2.1.0",
+        "grunt-postcss": "^0.8.0",
+        "grunt-replace": "^1.0.1",
+        "postcss-cssnext": "^2.8.0",
+        "postcss-remove-root": "0.0.2",
+        "stylefmt": "^4.3.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/egalink/calendar.js.git"
+    },
+    "keywords": [
+        "simple",
+        "minimal",
+        "powerfull",
+        "fully customizable",
+        "event calendar",
+        "calendar",
+        "javascript",
+        "plugin"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/egalink/calendar.js/issues"
+    }
+}

@@ -1,0 +1,145 @@
+/**
+ * Theme: Default.
+ */
+.calendar {
+    font-size: 100%;
+    cursor: default;
+    width: 100%;
+    height: auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.calendar * {
+    position: relative;
+    -webkit-transition: all .25s;
+         -o-transition: all .25s;
+            transition: all .25s;
+}
+
+/* Calendar Body: */
+.calendar .c-body {
+    margin: 0 auto;
+}
+
+/* Calendar Header: */
+.calendar .c-header {
+    background-color: #36B8F4;
+    clear: both;
+    overflow: hidden;
+}
+.calendar .c-header .c-button,
+.calendar .c-header .c-month {
+    color: #FFF;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 1em 0;
+    text-align: center;
+}
+.calendar .c-header .c-button {
+    background-color: #36B8F4;
+    border: none;
+    cursor: pointer;
+    width: calc(100% /7);
+}
+.calendar .c-header .c-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.calendar .c-header .c-button--prev {}
+.calendar .c-header .c-month {
+    width: calc(100% /7*5);
+}
+.calendar .c-header .c-button--next {}
+
+/* Calendar Weekdays: */
+.calendar .c-weekdays {
+    background-color: #F0F5F8;
+    border: 1px solid #E0E6EC;
+    clear: both;
+    font-size: 13px;
+    font-weight: bold;
+    overflow: hidden;
+}
+.calendar .c-weekdays .c-weekday {
+    border: 1px solid #E0E6EC;
+    color: #68696B;
+    float: left;
+    padding: 1em;
+    text-align: center;
+    width: calc(100% /7);
+}
+
+/* Calendar Days: */
+.calendar .c-days {
+    background-color: #F0F5F8;
+    border: 1px solid #E0E6EC;
+    clear: both;
+    font-size: 16px;
+    overflow: hidden;
+    top: -2px;
+}
+.calendar .c-days .c-day {
+    border: 1px solid #E0E6EC;
+    float: left;
+    padding: 2em 1em;
+    text-align: center;
+    width: calc(100% /7);
+}
+.calendar .c-days .c-day a {
+    color: #68696B;
+}
+.calendar .c-days .c-day .c-day-number {
+    display: inline-block;
+    padding: 0 0 4px 4px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+/* Calendar Days - Highlight days of previous month: */
+.calendar .c-days .c-day--previous-month {
+    background-color: #E8EEF2;
+}
+.calendar .c-days .c-day--previous-month a {
+    color: #A9A9A9;
+}
+
+/* Calendar Days - Highlight days of next month: */
+.calendar .c-days .c-day--next-month {
+    background-color: #F9FBFD;
+}
+.calendar .c-days .c-day--next-month a {
+    color: #A9A9A9;
+}
+
+/* Calendar Days - Highlight day with events: */
+.calendar .c-days .c-day--has-events {
+    background-color: #FAFBD6;
+    font-weight: bold;
+}
+.calendar .c-days .c-day--has-events:after {
+    display: inline-block;
+    content: attr(data-num-events);
+    color: #257FA8;
+    font-size: 13px;
+    position: absolute;
+    text-align: center;
+    bottom: 4px;
+    left: 6px;
+}
+
+/* Calendar Days - Highlight today: */
+.calendar .c-days .c-day--today {
+    background-color: #36B8F4;
+    color: #FFF;
+    font-weight: bold;
+    z-index: 1;
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+.calendar .c-days .c-day--today .c-day-number {
+    color: #FFF;
+}
+
+
+/* ------------------------------------------------------------------------- */

@@ -1,0 +1,174 @@
+/*@import url('https://fonts.googleapis.com/css?family=Nunito');/***/
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    line-height: 1.65em;
+}
+
+html,
+body {
+    margin: 0 auto;
+}
+
+html {
+    font-family: 'Nunito', sans-serif;
+    font-size: 100%;
+    line-height: 1.5em;
+    background-color: #FEFEFE;
+}
+
+pre {
+    overflow: auto;
+}
+pre code {
+    font-size: 0.85em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1A1A1B;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+h1 {
+    color: #36B8F4;
+    font-size: 3.65em;
+}
+h2 {
+    color: #36B8F4;
+    font-size: 1.65em;
+}
+p {
+    color: #68696B;
+    font-size: 1em;
+}
+
+ul, ol {
+    color: #68696B;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+a:link, a {
+    color: #36B8F4;
+}
+a:visited {
+    color: #36B8F4;
+}
+a:active {
+    color: #F4A136;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+b {
+    color: #1A1A1B;
+}
+
+select {
+    color: inherit;
+}
+
+/* prism style: */
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: #353C3E;
+}
+
+.content {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+/* presentation: */
+#presentation {
+    background-color: #353C3E;
+    position: relative;
+    box-shadow: 0px 3px 24px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+#presentation h1 {
+    text-align: center;
+}
+#presentation ul {
+    padding-left: 13px;
+}
+#presentation p,
+#presentation ul li {
+    color: #FFF;
+}
+
+#presentation .calendar {
+    margin: 0 auto;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.16);
+}
+ 
+footer {
+    background-color: #353C3E;
+}
+footer p {
+    color: #FFF;
+    text-align: center;
+}
+
+.test, .test * {
+    outline: 1px solid red;
+    outline-offset: -1px;
+}
+
+
+/* Example use: */
+
+.event-box {
+    background-color: rgba(0, 0, 0, 0.32);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.event-box .box {
+    background-color: #FFF;
+    position: inherit;
+    min-height: 240px;
+    width: 320px;
+    top: 50%;
+    left: 50%;
+    margin: -120px 0 0 -160px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0.16);
+}
+.event-box .box h2 {
+    background-color: #36B8F4;
+    border-radius: 6px 6px 0 0;
+    color: #FFF;
+    font-size: 18px;
+    padding: 0.5em 1em;
+    box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.16);
+}
+
+ul#event-list {
+    border: 2px solid #e0e6ec;
+        height: 402px;
+    max-height: 402px;
+    min-width: 240px;
+    overflow: auto;
+    padding: 0.8em;
+    margin: 0 auto;
+    list-style: none;
+}
+
+ul#event-list li {
+    font-size: 13px;
+    padding: 10px;
+}
+ul#event-list li:hover,
+ul#event-list li:nth-child(odd) {
+    background-color: #FAFBD6;
+}

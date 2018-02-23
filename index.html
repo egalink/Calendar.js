@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <title>calendar.js</title>
+        <link href="./assets/favicon.ico" rel="shortcut icon"/>
+        <link href="./assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="./assets/prism/prism.css" rel="stylesheet"/>
+        <link href="./assets/griditify.css" rel="stylesheet"/>
+        <link href="./assets/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+
+        <section id="presentation">
+            <div class="content">
+                <h1>calendar.js</h1>
+                <p style="text-align:center;">
+                    A simple, minimal, powerful and fully customizable event calendar plugin without library dependencies.
+                </p>
+            </div>
+            <div class="content">
+                <div class="griditify griditify--fluid">
+                    <div class="row middle">
+                        <div class="col-00">
+                            <div id="calendar" class=""></div>
+                        </div>
+                        <div class="col-05">
+                            <h2>Features:</h2>
+                            <ul>
+                                <li><p>Weighs only ~6KB minified and Gzip’ed.</p></li>
+                                <li><p>Doesn’t require any external libraries.</p></li>
+                                <li><p>You can easily add or remove events from calendar.</p></li>
+                                <li><p>Completely customizable.</p></li>
+                                <li><p>Works in all modern desktop and mobile browsers, including IE 9 and up.</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content"><br/></div>
+        </section>
+
+        <section id="instructions">
+            <div class="content"><br/></div>
+            <div class="content">
+                <h2>Usage Instructions</h2>
+                <p>
+                    Following the steps below you will be able to get the plugin up and running.
+                    If you notice any bugs, please post them to <a href="https://github.com/egalink/calendar.js/issues">GitHub issues</a>.
+                </p>
+                <br/>
+                <h3>Add markup</h3>
+
+<pre class=" language-markup"><code class=" language-markup">&lt;!-- put this line in anywhere of your &lt;body&gt; in your HTML --&gt;
+&lt;div id="calendar"&gt;&lt;/div&gt;</code></pre>
+                <br/>
+                <h3>Link &amp; Hook up the plugin</h3>
+                <p>All ready-to-use files are located in the dist/ directory.</p>
+                <pre class=" language-markup"><code class=" language-markup">&lt;!-- put this right before the &lt;/body&gt; closing tag --&gt;
+&lt;link href="dist/calendar.min.css" rel="stylesheet"/&gt;
+&lt;script src="dist/calendar.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    var calendar = new Calendar(document.getElementById('calendar'));
+&lt;/script&gt;
+</code></pre>
+
+                <p>A calendar will appear after do this correctly.</p>
+                <br/>
+                <h3>Public methods</h3>
+                <p>Once you have a reference to Calendar instance following methods are available.</p>
+
+<pre class=" language-javascript"><code class=" language-javascript">// change calendar to next month:
+calendar.nextMonth();
+// change calendar to previous month:
+calendar.prevMonth();
+// change calendar to current month:
+calendar.currMonth();
+// add events to calendar.
+// each user event has dinamically asigned to a unique ID to identify the registry:
+calendar.addEvents({
+    id : 1,
+    datetime : "2018-06-15 18:45:00",
+    title : "Event title.",
+    description : "A brief description for the event.",
+    status : 65
+}, ...);
+// Remove a user-defined event from the calendar by
+// passing the event ID as a parameter.
+calendar.removeEvent(id);
+// get all user events or get events filtered by a valid "YYYY-MM-DD" date (optional):
+var events = calendar.getEvents(date);
+// parse a valid 'Y-m-d' or 'Y-m-d H:i:s' date string to js Date Format
+// and returns new Date object or FALSE if date string is invalid.
+var dateOb = calendar.dateParse(date);
+// assign new custom function to "onDayClick" event.
+calendar.onDayClick(function (el, date, events) {
+    console.log(arguments);
+});
+</code></pre>
+
+                <br/>
+                <h3>Customization</h3>
+                <p>Overwrite the default settings as shown below.</p>
+
+<pre class=" language-markup"><code class=" language-markup">&lt;script&gt;
+    var settings = {
+        // "string": The name of the CSS calendar theme.
+        theme: 'calendar',
+        // {object}: Language options.
+        i18n: {
+            // "string": Text for previous month button.
+            prevMonth: '<',
+            // "string": Text for next month button.
+            nextMonth: '>',
+            // [array]: Name for each month shown on the calendar.
+            months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            // [array]: Name for each day of the week shown on the calendar.
+            weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        },
+        // [array]: All user defined events.
+        // To generate an event in the calendar, you can pass a object-key-value
+        // with all values ​​as you need.
+        events: [
+            {
+                // "string" | integer: id is optional.
+                // if you don't provide a id in each record, the plugin will dynamically
+                // assign a unique id in each one.
+                id: 1,
+                // "string": a valid datetime: "YYYY-MM-DD HH:MM:SS" string (required).
+                datetime: "2018-06-15 18:45:00"
+                // all other data ...
+                title: "Event title.",
+                description: "A brief description for the event."
+                status: 64,
+                // ...
+            }
+        ],
+        // integer: Start the week off on Sunday (0), Monday (1), etc.
+        // Sunday is the default.
+        weekOffset: 0,
+        // function: It is fired when a calendar day is clicked.
+        onDayClick: function (el, date, events) {}
+    };
+
+    // pass the object with your configuration as a second parameter:
+    var calendar = new Calendar(document.getElementById('calendar'), settings);
+&lt;/script&gt;
+</code></pre>
+
+            </div>
+            <div class="content"><br/></div>
+        </section>
+
+        <footer>
+            <div class="content">
+                <p>Copyright &copy; 2018 <a href="//jakim.me/" target="_blank">Jakim Hernández</a>. Released under the MIT license.</p>
+            </div>
+        </footer>
+
+        <!-- calendar.js plugin files: -->
+        <link href="./dist/calendar.css" rel="stylesheet"/>
+        <link href="./dist/calendar-themes.css" rel="stylesheet"/>
+        <script src="./dist/calendar.js" type="text/javascript"></script>
+
+        <!-- assets: -->
+        <script src="./assets/prism/prism.js" type="text/javascript"></script>
+        <script src="./assets/main.js" type="text/javascript"></script>
+
+    </body>
+</html>

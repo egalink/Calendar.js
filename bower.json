@@ -1,0 +1,38 @@
+{
+    "name": "calendar",
+    "authors": [
+        "Jakim Hernández <egalink@gmail.com>"
+    ],
+    "description": "A simple, minimal, powerful and fully customizable event calendar plugin written in pure JavaScript. No dependences required.",
+    "main": [
+        "dist/calendar.min.js",
+        "dist/calendar.min.css"
+    ],
+    "moduleType": [
+        "amd",
+        "globals",
+        "node"
+    ],
+    "dependencies": {},
+    "keywords": [
+        "simple",
+        "minimal",
+        "powerfull",
+        "fully customizable",
+        "event calendar",
+        "calendar",
+        "javascript",
+        "plugin"
+    ],
+    "license": "MIT",
+    "homepage": "https://egalink.github.io/calendar.js/",
+    "ignore": [
+        "**/.*",
+        "assets",
+        "node_modules",
+        "bower_components",
+        "Gruntfile.js",
+        "index.html",
+        "package.json"
+    ]
+}
