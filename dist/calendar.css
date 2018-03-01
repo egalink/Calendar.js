@@ -1,4 +1,4 @@
-/*! calendar.js - v1.0.0 - 2018-02-09
+/*! calendar.js - v1.0.0 - 2018-02-28
 * https://egalink.github.io/calendar.js/
 * Copyright (c) 2018 Jakim Hernández; Licensed MIT */
 .calendar {
@@ -93,7 +93,7 @@
 .calendar .c-days .c-day {
   border: 1px solid #e0e6ec;
   float: left;
-  padding: 2em 1em;
+  padding: 1.64em 1em;
   text-align: center;
   width: 14.28571%;
 }

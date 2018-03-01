@@ -81,7 +81,7 @@
 .calendar .c-days .c-day {
     border: 1px solid #E0E6EC;
     float: left;
-    padding: 2em 1em;
+    padding: 1.64em 1em;
     text-align: center;
     width: calc(100% /7);
 }

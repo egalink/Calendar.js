@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css?family=Nunito');/***/
+@import url('https://fonts.googleapis.com/css?family=Nunito');/***/
 
 * {
     box-sizing: border-box;
@@ -70,6 +70,10 @@ b {
 
 select {
     color: inherit;
+}
+
+.row .col-00 {
+    min-width: 320px;
 }
 
 /* prism style: */

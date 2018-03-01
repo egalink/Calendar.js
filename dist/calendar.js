@@ -1,4 +1,4 @@
-/*! calendar.js - v1.0.0 - 2018-02-09
+/*! calendar.js - v1.0.0 - 2018-03-01
 * https://egalink.github.io/calendar.js/
 * Copyright (c) 2018 Jakim Hernández; Licensed MIT */
 
@@ -326,6 +326,24 @@
         else
             return false;
     }
+
+    /**
+     * Check if a string would make a valid html ID.
+     *
+     * @return boolean
+     */
+    function isId(selector) {
+        return /^(?:#([\w-]+))$/.test(selector);
+    };
+
+    /**
+     * Check if a string would make a valid html className.
+     *
+     * @return boolean
+     */
+    function isCl(selector) {
+        return /^(?:\.([\w-]+))$/.test(selector);
+    };
 
     /**
      * Initialize the Calendar.js plugin.
@@ -708,7 +726,7 @@
 
         generate();
     };
-    
+
     /**
      * Constructor.
      *
@@ -716,7 +734,33 @@
      */
     var Calendar = function (element, options) {
         // do more...
-        init(element, options);
+        if (typeof element === "string") {
+            if (isId(element) === true || isCl(element) === true) element = document.querySelectorAll(element);
+            else
+                throw new Error("You must provide a valid CSS selector or Element Object as first parameter.");
+        }
+
+        if (! element)
+            throw new Error("Element Object is undefined.");
+
+        if (element.isNodeList() === false) {
+            init(element, options);
+        } else {
+            for (var i = 0; i < element.length; i ++) init(element[i], options);
+        }
+    };
+
+    /**
+     * JS TRICK
+     * How to detect HTMLCollection/NodeList in JavaScript.
+     *
+     * https://stackoverflow.com/questions/7238177/how-to-detect-htmlcollection-nodelist-in-javascript
+     */
+    Element.prototype.isNodeList = function () {
+        return false;
+    };
+    NodeList.prototype.isNodeList = HTMLCollection.prototype.isNodeList = function () {
+        return true;
     };
 
     window.Calendar = Calendar;

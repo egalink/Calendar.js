@@ -1,3 +1,6 @@
+
+var CAL;
+
 (function(w) {
 
     'use strict';
@@ -41,8 +44,8 @@
             }
         ],
         onDayClick: function (el, date, events) {
-
-            assignEvents(events, document.getElementById('event-list'));
+            console.log(arguments);
+            //assignEvents(events, document.getElementById('event-list'));
 
             if (events.length < 1) {
                 //
@@ -86,6 +89,7 @@
         return ul;
     };
 
-    var calendar = new Calendar(document.getElementById("calendar") || '#calendar' || '.calendar', settings);
+    var calendar = new Calendar("#calendar", settings);
+    CAL=calendar;
     /***/
 })(window);
